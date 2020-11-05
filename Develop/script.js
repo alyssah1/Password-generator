@@ -1,6 +1,6 @@
 
 //Created arrays with possible variable values
-var passNumber = [1, 2, 3, 4, 5, 6, 7, 8];
+var passNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 var passCharacter = ["!", "&", "@", "$", "%"];
 var passLowerCase = ["a", "b", "c", "d", "e", "f"];
 
@@ -8,19 +8,34 @@ var passLowerCase = ["a", "b", "c", "d", "e", "f"];
 var generateBtn = document.querySelector("#generate");
 
  
+
+
+
+
+
+
+
 //ask user input 
 var userChoice = prompt("How many characters would you like your password to be? Choose between 8 and 20");
 
 
-if (userChoice) {
-}
-else if (enter < 8 || enter > 20) {
-}
-else {
-  passNumber = confirm("Will this contain numbers?");
-  passCharacter = confirm("Will this contain special characters?");
-  passLowerCase = confirm("Will this contain Lowercase letter?");
+if (userChoice
+&& (userChoice < 8 || userChoice > 20)) {
+
+passNumber = confirm("Will this contain numbers?");
+passCharacter = confirm("Will this contain special characters?");
+passLowerCase = confirm("Will this contain Lowercase letter?");
 };
+
+
+
+
+
+
+
+
+
+
 
 
 //Write password to the #password input
