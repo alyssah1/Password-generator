@@ -17,10 +17,11 @@ var generateBtn = document.querySelector("#generate");
 
 //ask user input 
 var userChoice = prompt("How many characters would you like your password to be? Choose between 8 and 20");
-
+console.log(userChoice)
+console.log(userChoice < 8)
 
 if (userChoice
-&& (userChoice < 8 || userChoice > 20)) {
+&& (userChoice >= 8 || userChoice <= 20)) {
 
 passNumber = confirm("Will this contain numbers?");
 passCharacter = confirm("Will this contain special characters?");
