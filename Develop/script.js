@@ -25,10 +25,10 @@ function generatePassword() {
   var index;
 
   //ask user input 
-userChoice = prompt("How many characters would you like your password to be? Choose between 8 and 128");
+userChoice = prompt("How many characters would you like your password to be? Choose between 8 and 128.");
 
 while (userChoice < 8 || userChoice > 128) {
-  userChoice = prompt("Choose password at least 8 charcters but no more than 128 characters");
+  userChoice = prompt("Choose a password that is at least 8 characters but no more than 128.");
 } 
 //user confirms will it contain lower case
 while (passwordCharacters === '') {
