@@ -1,52 +1,68 @@
 
-//Created arrays with possible variable values
-var passNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-var passCharacter = ["!", "&", "@", "$", "%"];
-var passLowerCase = ["a", "b", "c", "d", "e", "f"];
+
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
- 
 
-
-
-
-
-
-
-//ask user input 
-var userChoice = prompt("How many characters would you like your password to be? Choose between 8 and 20");
-console.log(userChoice)
-console.log(userChoice < 8)
-
-if (userChoice
-&& (userChoice >= 8 || userChoice <= 20)) {
-
-passNumber = confirm("Will this contain numbers?");
-passCharacter = confirm("Will this contain special characters?");
-passLowerCase = confirm("Will this contain Lowercase letter?");
-};
-
-
-
-
-
-
-
-
-
-
-
-
-//Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  
-  passwordText.value = password;
+  passwordText.value = password
+} 
+generateBtn.addEventListener("click", writePassword);
 
+var generateBtn = document.querySelector("#generate");
+function getRandomIndex(maxLength) {
+  return Math.floor(Math.random() * Math.floor(maxLength));
+};
+
+
+function generatePassword() {
+  var userChoice;
+  var passwordCharacters = '';
+  var randomPassword = '';
+  var index;
+
+  //ask user input 
+userChoice = prompt("How many characters would you like your password to be? Choose between 8 and 128");
+
+while (userChoice < 8 || userChoice > 128) {
+  userChoice = prompt("Choose password at least 8 charcters but no more than 128 characters");
+} 
+//user confirms will it contain lower case
+while (passwordCharacters === '') {
+  if (confirm("Will it contain lower case letters?")) {
+  passwordCharacters = passwordCharacters + 'abcdefghijklmnopqrstuvwxyz';
+  }
+//user confirms will it contain upper case 
+  if (confirm("Will it contain upper case letters?")) {
+    passwordCharacters = passwordCharacters + 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  }
+//user confirms will it contain special characters
+  if (confirm("Will it contain special characters?")) {
+    passwordCharacters = passwordCharacters + '!@#$%^&*+-';
+  }
+//user confirm will it contain numbers
+  if (confirm("Will it contain numbers?")) {
+    passwordCharacters = passwordCharacters + '123456789';
+  }
+}
+//created for loop to generate random password 
+for (var i = 0; i < userChoice; i++) {
+  index = getRandomIndex(passwordCharacters.length);
+  randomPassword = randomPassword + passwordCharacters.charAt(index);
+  
 }
 
-//Add event listener to generate button
+  return randomPassword;
+}
+
+
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password
+} 
+
 generateBtn.addEventListener("click", writePassword);
