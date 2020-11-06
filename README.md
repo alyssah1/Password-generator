@@ -31,7 +31,7 @@ Link to example photo
 
 ![password-generator](./Assets/03-javascript-homework-demo.png)
 
-![websitelink] 
+![websitelink](https://alyssah1.github.io/Password-generator/)
 
 # Files included 
 index.html, style.css and script.js
