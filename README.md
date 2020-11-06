@@ -29,9 +29,9 @@ THEN the password is either displayed in an alert or written to the page
 # Helpful Link
 Link to example photo
 
-![password-generator](./Assets/03-javascript-homework-demo.png)
+![websitescreenshot](./Assets/03-javascript-homework-demo.png)
 
-![websitelink](https://alyssah1.github.io/Password-generator/)
+
 
 # Files included 
 index.html, style.css and script.js
